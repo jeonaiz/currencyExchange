@@ -12,19 +12,17 @@ import java.util.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
 @Entity
-@Table(name = "moneyBalance")
-public class MoneyBalance {
+@Table(name = "position")
+public class Position {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String currency;
-    Integer amount;
-    @JsonFormat(pattern = "dd.MM.yyyy hh:mm:ss")
-    Date lastUpdated;
+    String admin;
+    String manager;
 
     @ManyToOne
-    @JoinColumn(name = "balanceChange")
-    MoneyTransaction moneyTransaction;
-
+    @JoinColumn(name = "position_id")
+    User user;
 }

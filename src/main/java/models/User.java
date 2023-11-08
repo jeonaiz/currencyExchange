@@ -6,7 +6,10 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -28,12 +31,13 @@ public class User {
     @JsonFormat(pattern = "dd.MM.yyyy hh:mm:ss")
     Date addDate;
 
-    @ManyToOne
-    @JoinColumn(name = "relatedUserID")
-    MoneyTransaction moneyTransaction;
-
-    @ManyToOne
-    @JoinColumn(name = "userID")
-    CurrencyExchange currencyExchange;
+    @ManyToMany
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(
+                    name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id", referencedColumnName = "id"))
+    private Collection<Role> roles;
 }
 

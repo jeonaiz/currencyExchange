@@ -21,9 +21,49 @@ public class MoneyTransaction {
 
     String currency;
     String transactionType;
-    Integer balanceChange;
-    Integer relatedUserId;
+    Long balanceChange;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public String getTransactionType() {
+        return transactionType;
+    }
+
+    public void setTransactionType(String transactionType) {
+        this.transactionType = transactionType;
+    }
+
+    public Long getBalanceChange() {
+        return balanceChange;
+    }
+
+    public void setBalanceChange(Long balanceChange) {
+        this.balanceChange = balanceChange;
+    }
+
+    public Long getRelatedUserId() {
+        return relatedUserId;
+    }
+
+    public void setRelatedUserId(Long relatedUserId) {
+        this.relatedUserId = relatedUserId;
+    }
+
+    Long relatedUserId;
 
     @JsonFormat(pattern = "dd.MM.yyyy hh:mm:ss")
     Date transactionDate;

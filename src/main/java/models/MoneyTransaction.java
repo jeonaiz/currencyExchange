@@ -19,6 +19,54 @@ public class MoneyTransaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public String getTransactionType() {
+        return transactionType;
+    }
+
+    public void setTransactionType(String transactionType) {
+        this.transactionType = transactionType;
+    }
+
+    public Integer getBalanceChange() {
+        return balanceChange;
+    }
+
+    public void setBalanceChange(Integer balanceChange) {
+        this.balanceChange = balanceChange;
+    }
+
+    public Integer getRelatedUserId() {
+        return relatedUserId;
+    }
+
+    public void setRelatedUserId(Integer relatedUserId) {
+        this.relatedUserId = relatedUserId;
+    }
+
+    public Date getTransactionDate() {
+        return transactionDate;
+    }
+
+    public void setTransactionDate(Date transactionDate) {
+        this.transactionDate = transactionDate;
+    }
+
     String currency;
     String transactionType;
     Integer balanceChange;

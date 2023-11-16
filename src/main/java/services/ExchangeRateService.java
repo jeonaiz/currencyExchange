@@ -9,5 +9,4 @@ public interface ExchangeRateService {
 
     ExchangeRate getExchangeRateById(Long id);
 
-    // Other methods, if needed
 }

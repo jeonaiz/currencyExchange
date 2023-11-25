@@ -31,6 +31,6 @@ public class CurrencyExchangeController {
 
     @GetMapping
     public String getAllCurrencyExchanges() {
-        return "TransactionWebSocketConfig";
+        return "currency_exchangePort";
     }
 }

@@ -10,9 +10,10 @@ import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBr
 
 @SpringBootApplication
 @EnableConfigurationProperties
-@EnableWebSocketMessageBroker
-@EnableWebSocket
+//@EnableWebSocketMessageBroker
+//@EnableWebSocket
 @EntityScan(basePackages = {"models"})
+
 public class CurrencyExchangeApplication {
 
 	public static void main(String[] args) {

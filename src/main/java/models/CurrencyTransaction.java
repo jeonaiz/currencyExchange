@@ -81,6 +81,10 @@ public class CurrencyTransaction {
     }
 
     private LocalDateTime transactionTime;
+    @Column(name = "purchase_amount")
+    private double purchaseAmount;
 
-
+    public double getPurchaseAmount() {
+        return purchaseAmount;
+    }
 }

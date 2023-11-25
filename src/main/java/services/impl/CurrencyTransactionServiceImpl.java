@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import services.CurrencyTransactionService;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -49,10 +50,35 @@ public class CurrencyTransactionServiceImpl implements CurrencyTransactionServic
 
     private double calculateConvertedAmount(double amount, double exchangeRate, TransactionType transactionType) {
         if (transactionType == TransactionType.BUY) {
-            return amount / exchangeRate;
-        } else if (transactionType == TransactionType.SELL) {
             return amount * exchangeRate;
+        } else if (transactionType == TransactionType.SELL) {
+            return amount / exchangeRate;
         }
+        throw new IllegalArgumentException("Invalid transaction type");
+    }
+
+    public double calculateProfit() {
+        List<CurrencyTransaction> allTransactions = transactionRepository.findAll();
+
+        double totalProfit = 0.0;
+
+        for (CurrencyTransaction transaction : allTransactions) {
+            double profitForTransaction = calculateProfitForTransaction(transaction);
+            totalProfit += profitForTransaction;
+        }
+
+        return totalProfit;
+    }
+
+    private double calculateProfitForTransaction(CurrencyTransaction transaction) {
+        if (transaction.getTransactionType() == TransactionType.BUY) {
+
+            return 0.0;
+        } else if (transaction.getTransactionType() == TransactionType.SELL) {
+            double profit = transaction.getConvertedAmount() - transaction.getAmount();
+            return profit;
+        }
+
         throw new IllegalArgumentException("Invalid transaction type");
     }
 }

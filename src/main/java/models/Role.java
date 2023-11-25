@@ -6,7 +6,7 @@ import models.User;
 
 import java.util.Collection;
 @Entity
-public class  Role {
+public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,13 +20,6 @@ public class  Role {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Collection<User> getUsers() {
         return users;
@@ -44,7 +37,15 @@ public class  Role {
         this.privileges = privileges;
     }
 
-    private String name;
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    private String roleName;
     @ManyToMany(mappedBy = "roles")
     private Collection<User> users;
 

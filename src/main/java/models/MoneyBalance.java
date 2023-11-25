@@ -25,6 +25,6 @@ public class MoneyBalance {
 
     @ManyToOne
     @JoinColumn(name = "balanceChange")
-    MoneyTransaction moneyTransaction;
+    CurrencyTransaction moneyTransaction;
 
 }

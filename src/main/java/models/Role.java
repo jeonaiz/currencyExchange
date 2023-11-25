@@ -6,7 +6,7 @@ import models.User;
 
 import java.util.Collection;
 @Entity
-public class Role {
+public class  Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

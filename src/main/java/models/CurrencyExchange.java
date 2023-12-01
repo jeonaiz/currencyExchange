@@ -67,14 +67,6 @@ public class CurrencyExchange {
         this.amount = amount;
     }
 
-    public Integer getProfit() {
-        return profit;
-    }
-
-    public void setProfit(Integer profit) {
-        this.profit = profit;
-    }
-
     public Date getTransactionDate() {
         return transactionDate;
     }
@@ -87,7 +79,16 @@ public class CurrencyExchange {
     String targetCurrency;
     Integer exchangeRate;
     Integer amount;
-    Integer profit;
+
+    public Long getProfit_id() {
+        return profit_id;
+    }
+
+    public void setProfit_id(Long profit_id) {
+        this.profit_id = profit_id;
+    }
+
+    Long profit_id;
     @JsonFormat(pattern = "dd.MM.yyyy hh:mm:ss")
     Date transactionDate;
 

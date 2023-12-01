@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @Service
 public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
+
     private final CurrencyExchangeRepository currencyExchangeRepository;
 
     @Autowired
@@ -33,4 +34,16 @@ public class CurrencyExchangeServiceImpl implements CurrencyExchangeService {
         return currencyExchangeRepository.findById(id);
     }
 
+    @Override
+    public CurrencyExchange updateCurrencyExchange(Long id, CurrencyExchange updatedCurrencyExchange) {
+        Optional<CurrencyExchange> existingCurrencyExchangeOptional = currencyExchangeRepository.findById(id);
+
+        if (existingCurrencyExchangeOptional.isPresent()) {
+            CurrencyExchange existingCurrencyExchange = existingCurrencyExchangeOptional.get();
+            existingCurrencyExchange.setExchangeRate(updatedCurrencyExchange.getExchangeRate());
+
+            return currencyExchangeRepository.save(existingCurrencyExchange);
+        }
+        return null;
+    }
 }

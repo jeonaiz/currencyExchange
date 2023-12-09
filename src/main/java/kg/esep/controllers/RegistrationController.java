@@ -1,7 +1,7 @@
-package controllers;
+package kg.esep.controllers;
 
-import dao.UserRepository;
-import models.User;
+import kg.esep.dao.UserRepository;
+import kg.esep.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;

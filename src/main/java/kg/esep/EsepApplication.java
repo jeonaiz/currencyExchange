@@ -10,14 +10,14 @@ import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBr
 
 @SpringBootApplication
 @EnableConfigurationProperties
-//@EnableWebSocketMessageBroker
-//@EnableWebSocket
+@EnableWebSocketMessageBroker
+@EnableWebSocket
 @EntityScan(basePackages = {"models"})
 
-public class CurrencyExchangeApplication {
+public class EsepApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CurrencyExchangeApplication.class, args);
+		SpringApplication.run(EsepApplication.class, args);
 	}
 
 }

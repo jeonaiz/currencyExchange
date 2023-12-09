@@ -1,17 +1,15 @@
-package kg.esep.services.impl;
+package services.impl;
 
-import kg.esep.dao.RoleRepository;
-import kg.esep.models.Role;
+import dao.RoleRepository;
+import models.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import kg.esep.services.RoleService;
+import services.RoleService;
 
 import java.util.List;
 
-
 @Service
-public class RoleServiceImpl implements RoleService
-{
+public class RoleServiceImpl implements RoleService {
 
     private final RoleRepository roleRepository;
 
@@ -21,13 +19,13 @@ public class RoleServiceImpl implements RoleService
     }
 
     @Override
-    public Role createRole( Role roleName ) {
-        return roleRepository.save(roleName);
+    public Role createRole(Role role) {
+        return roleRepository.save(role);
     }
 
     @Override
-    public Role updateRole(Role roleName) {
-        return roleRepository.save(roleName);
+    public Role updateRole(Role role) {
+        return roleRepository.save(role);
     }
 
     @Override

@@ -1,26 +1,22 @@
-package kg.esep.controllers;
+package controllers;
 
-import kg.esep.dao.UserRepository;
-import kg.esep.models.User;
-
+import dao.UserRepository;
+import models.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-
-@RestController
+@Controller
 public class RegistrationController {
 
     @Autowired
     private UserRepository userRepository;
 
-
-    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @GetMapping("/registration")
     public String registrationForm() {

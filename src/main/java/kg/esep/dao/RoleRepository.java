@@ -1,14 +1,12 @@
-package kg.esep.dao;
+package dao;
 
-import kg.esep.models.Role;
-
+import models.Role;
+import models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RoleRepository extends JpaRepository <Role, Long> {
 
-    Role findByRoleName(String roleName);
-
-
+    Role findByName(String name);
 }

@@ -6,8 +6,8 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.Date;
 
 
 @Data
@@ -50,16 +50,13 @@ public class User {
         return position_id;
     }
 
-    public void setPosition_id(Long position_id) {
+    public void setPosition_id() {
         this.position_id = position_id;
     }
 
-    public Date getAddDate() {
-        return addDate;
-    }
 
-    public void setAddDate(Date addDate) {
-        this.addDate = addDate;
+    public void setAddDate() {
+        this.addDate = LocalDateTime.now();
     }
 
     public Collection<Role> getRoles() {
@@ -84,6 +81,7 @@ public class User {
     private Long position_id;
   //  private String login;
     private String password;
+
 
     public String getFirstName() {
         return firstName;
@@ -123,7 +121,7 @@ public class User {
 
     private boolean Enabled;
     @JsonFormat(pattern = "dd.MM.yyyy hh:mm:ss")
-    Date addDate;
+    private LocalDateTime addDate;
 
     @ManyToMany
     @JoinTable(

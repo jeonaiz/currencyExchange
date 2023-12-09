@@ -12,7 +12,7 @@ import java.util.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 
 @Entity
-@Table(name = "currencyExchange")
+@Table(name = "currency_exchange")
 public class CurrencyExchange {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

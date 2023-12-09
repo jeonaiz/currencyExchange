@@ -1,10 +1,10 @@
-package services.impl;
+package kg.esep.services.impl;
 
-import dao.RoleRepository;
-import models.Role;
+import kg.esep.dao.RoleRepository;
+import kg.esep.models.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import services.RoleService;
+import kg.esep.services.RoleService;
 
 import java.util.List;
 

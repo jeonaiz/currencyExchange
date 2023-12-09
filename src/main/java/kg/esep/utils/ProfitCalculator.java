@@ -18,7 +18,7 @@ public class ProfitCalculator {
         if (transactionType == TransactionType.BUY) {
             return 0.0;
         } else if (transactionType == TransactionType.SELL) {
-            return (amount * exchangeRate) - purchaseAmount;
+            return (amount * exchangeRate) - (purchaseAmount*amount);
         }
 
         throw new IllegalArgumentException("Invalid transaction type");

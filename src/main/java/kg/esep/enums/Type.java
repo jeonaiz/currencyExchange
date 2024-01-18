@@ -1,4 +1,4 @@
-package kg.esep.models.dto;
+package kg.esep.enums;
 
 
 public enum Type
